@@ -13,7 +13,7 @@ $fh.ready(function() {
     // See: http://docs.feedhenry.com/wiki/Actions
     $fh.act(
       {
-        act:'listInfo',
+        act:'storeInfo',
         req: {
           name : 'Eoin',
           work : 'Feedhenry'
@@ -35,7 +35,7 @@ $fh.ready(function() {
     // See: http://docs.feedhenry.com/wiki/Actions
     $fh.act(
       {
-        act:'storeInfo',
+        act:'listInfo',
       },
       function(code,errorprops,params) {
         alert('An error occured: ' + code + ' : ' + errorprops);
