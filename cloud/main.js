@@ -23,16 +23,11 @@ exports.storeInfo = function(params, callback) {
 });
 }
          
-exports.storeInfo = function(params, callback) {
+exports.listInfo = function(params, callback) {
   $fh.db({
   "act": "list",
-  "type": "myFirstCollection",
+  "type": "myFirstEntity",
 }, function(err, data) {
-  if (err) {
-    console.log("Error " + err)
-  } else {
-    console.log(JSON.stringify(data))
-  }
-  return callback(null, {data: data});
+  return callback(err, data);
 });
 }
