@@ -37,11 +37,6 @@ $fh.ready(function() {
       {
         act:'storeInfo',
       },
-      function(res) {
-        var name = res.data.fields.name;
-        var work = res.data.fields.work;
-        document.getElementById('cloudConfig').innerHTML = "<p>Name: " + name + "<br/>Work: "+work+"</p>";
-      },
       function(code,errorprops,params) {
         alert('An error occured: ' + code + ' : ' + errorprops);
       }
