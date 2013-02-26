@@ -30,4 +30,22 @@ $fh.ready(function() {
     );
   };
   
+   document.getElementById('List_button').onclick = function() {
+    // Invoke a cloud action call to get the remote configuration
+    // See: http://docs.feedhenry.com/wiki/Actions
+    $fh.act(
+      {
+        act:'storeInfo',
+      },
+      function(res) {
+        var name = res.data.fields.name;
+        var work = res.data.fields.work;
+        document.getElementById('cloudConfig').innerHTML = "<p>Name: " + name + "<br/>Work: "+work+"</p>";
+      },
+      function(code,errorprops,params) {
+        alert('An error occured: ' + code + ' : ' + errorprops);
+      }
+    );
+  };
+  
 });
