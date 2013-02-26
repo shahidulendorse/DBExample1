@@ -41,8 +41,8 @@ $fh.ready(function() {
         }
       },
       function(res) {
-        var name = res.data.fields.name;
-        var work = res.data.fields.work;
+        console.log(res);
+        var res = res.list;
         document.getElementById('cloudConfig').innerHTML = "<p>Name: " + name + "<br/>Work: "+work+"</p>";
       },
       function(code,errorprops,params) {
